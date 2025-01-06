@@ -15,6 +15,7 @@ public class WindSpawnManager : MonoBehaviour
 
     private void OnEnable()
     {
+
         // Start spawning wind images when this GameObject is activated
         isSpawning = true;
         InvokeRepeating(nameof(SpawnPosition), timeDelay, spawnTime);
