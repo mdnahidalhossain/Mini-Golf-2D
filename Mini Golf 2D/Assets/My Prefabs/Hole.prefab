@@ -134,7 +134,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06a7c2460dd2cc44b8ee5391d5b154c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  holeSound: {fileID: 8300000, guid: 0d2b96feebc126f46895403d6ecefcae, type: 3}
+  holeSound: {fileID: 8300000, guid: 3e295bb7788f76348a396c59644e04b6, type: 3}
 --- !u!82 &6526483389670973982
 AudioSource:
   m_ObjectHideFlags: 0

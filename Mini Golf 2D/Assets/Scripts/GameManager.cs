@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
 
     public TransitionManager transitionManager;
     public Text playerScoreText;
+    public WindSpawnManager spawnManager;
 
     private void Start()
     {

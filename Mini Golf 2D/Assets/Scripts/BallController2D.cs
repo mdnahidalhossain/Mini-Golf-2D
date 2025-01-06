@@ -6,6 +6,7 @@ public class BallController2D : MonoBehaviour
     public float maxForce = 20f;         // Maximum force applied to the ball
     public LineRenderer aimLine;        // Line Renderer for visualizing aim
     public LayerMask holeLayer;         // Layer for detecting the hole
+    public LayerMask wallLayer;
     public float velocityThreshold = 0.5f; // Minimum velocity to consider the ball as "moving"
     private bool isAiming = false;
     private bool isBallMoving = false; // Track if the ball is moving
@@ -17,6 +18,8 @@ public class BallController2D : MonoBehaviour
     public float moveSpeed = 5f;      // Speed of moving towards the hole
 
     public GameObject dirtVfx;
+    public AudioSource audioSource;
+    public AudioClip ballCollisionSound;
 
     void Start()
     {
@@ -112,6 +115,12 @@ public class BallController2D : MonoBehaviour
                 StartCoroutine(MoveAndShrinkToHole(collision.transform));
                 gameManager.AddScore(1);
             }
+        }
+
+        if (((1 << collision.gameObject.layer) & wallLayer) != 0)
+        {
+            audioSource.clip = ballCollisionSound;
+            audioSource.Play();
         }
     }
 
