@@ -17,6 +17,12 @@ public class TransitionManager : MonoBehaviour
 
     public void OnPlayerScore()
     {
+        if (currentIndex >= gameObjects.Count - 1)
+        {
+            Debug.Log("All GameObjects have been activated. Transition stopped.");
+            return; // Stop further transitions
+        }
+
         // Deactivate the current GameObject
         if (currentIndex >= 0 && currentIndex < gameObjects.Count)
         {
@@ -31,11 +37,7 @@ public class TransitionManager : MonoBehaviour
         {
             gameObjects[currentIndex].SetActive(true);
         }
-        else
-        {
-            Debug.Log("All GameObjects have been activated.");
-            // Optionally, loop back or handle the end of the sequence
-            currentIndex = -1; // Reset to restart the sequence
-        }
+
+        
     }
 }

@@ -27,11 +27,12 @@ public class MenuScene : MonoBehaviour
     {
         Application.Quit();
 
-        EditorApplication.ExitPlaymode();
+        //EditorApplication.ExitPlaymode();
     }
 
     public void BackToMenu()
     {
         SceneManager.LoadScene(0);
     }
+
 }
